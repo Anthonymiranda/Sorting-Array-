@@ -1,0 +1,93 @@
+//getting the necesarry packages and goodies
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class StateCapitalP {
+    public static void main(String[] args) {
+        /*Create the HashMap and populates it with US state names as keys and their corresponding capitals as values.*/
+        Map<String, String> stateCapitalMap = new HashMap<>();
+        stateCapitalMap.put("alabama", "montgomery");
+        stateCapitalMap.put("alaska", "juneau");
+        stateCapitalMap.put("arizona", "phoenix");
+        stateCapitalMap.put("arkansas", "little rock");
+        stateCapitalMap.put("california", "sacramento");
+        stateCapitalMap.put("colorado", "denver");
+        stateCapitalMap.put("connecticut", "hartford");
+        stateCapitalMap.put("delaware", "dover");
+        stateCapitalMap.put("florida", "tallahassee");
+        stateCapitalMap.put("georgia", "atlanta");
+        stateCapitalMap.put("hawaii", "honolulu");
+        stateCapitalMap.put("idaho", "boise");
+        stateCapitalMap.put("illinois", "springfield");
+        stateCapitalMap.put("indiana", "indianapolis");
+        stateCapitalMap.put("iowa", "des moines");
+        stateCapitalMap.put("kansas", "topeka");
+        stateCapitalMap.put("kentucky", "frankfort");
+        stateCapitalMap.put("louisiana", "baton rouge");
+        stateCapitalMap.put("maine", "augusta");
+        stateCapitalMap.put("maryland", "annapolis");
+        stateCapitalMap.put("massachusetts", "boston");
+        stateCapitalMap.put("michigan", "lansing");
+        stateCapitalMap.put("minnesota", "st. paul");
+        stateCapitalMap.put("mississippi", "jackson");
+        stateCapitalMap.put("missouri", "jefferson city");
+        stateCapitalMap.put("montana", "helena");
+        stateCapitalMap.put("nebraska", "lincoln");
+        stateCapitalMap.put("nevada", "carson city");
+        stateCapitalMap.put("new hampshire", "concord");
+        stateCapitalMap.put("new jersey", "trenton");
+        stateCapitalMap.put("new mexico", "santa fe");
+        stateCapitalMap.put("new york", "albany");
+        stateCapitalMap.put("north carolina", "raleigh");
+        stateCapitalMap.put("north dakota", "bismarck");
+        stateCapitalMap.put("ohio", "columbus");
+        stateCapitalMap.put("oklahoma", "oklahoma city");
+        stateCapitalMap.put("oregon", "salem");
+        stateCapitalMap.put("pennsylvania", "harrisburg");
+        stateCapitalMap.put("rhode island", "providence");
+        stateCapitalMap.put("south carolina", "columbia");
+        stateCapitalMap.put("south dakota", "pierre");
+        stateCapitalMap.put("tennessee", "nashville");
+        stateCapitalMap.put("texas", "austin");
+        stateCapitalMap.put("utah", "salt lake city");
+        stateCapitalMap.put("vermont", "montpelier");
+        stateCapitalMap.put("virginia", "richmond");
+        stateCapitalMap.put("washington", "olympia");
+        stateCapitalMap.put("west virginia", "charleston");
+        stateCapitalMap.put("wisconsin", "madison");
+        stateCapitalMap.put("wyoming", "cheyenne");
+
+/*Create a scanner instance to get read the user input*/
+Scanner scanner = new Scanner(System.in);
+System.out.println("\nHere are all the States and their Capitals:");
+/*Using a for loop to iterate through the map keys and get method*/
+for (String state : stateCapitalMap.keySet()) {
+String capital = stateCapitalMap.get(state);
+System.out.println(state + " - " + capital);
+}
+/*here is the output asking for the state user input and input read code*/ 
+System.out.println("\nEnter the name of a state to get its capital (or type 'exit' to quit):");
+String input = scanner.nextLine();
+//here is where i had all the trouble
+/*a while loop that keeps asking the user for a state "case-insensitive" unti the user inputs "exit"*/
+while (!input.equalsIgnoreCase("exit")) {
+String state = input.trim().toLowerCase();
+//It also checks to make sure the state input is correct and outputs accordingly
+if (stateCapitalMap.containsKey(state)) {
+String capital = stateCapitalMap.get(state);
+System.out.println("The capital of " + state.toUpperCase() + " is " + capital);
+} else {
+System.out.println("Sorry, that state is not in the database.");
+}
+System.out.println("\nEnter the name of a state to get its capital (or type 'exit' to quit):");
+input = scanner.nextLine();
+}
+
+// Close the scanner and say goodbye
+scanner.close();
+System.out.println("\nThanks for using my program and please rate me good!");
+//I am actually on my knees while saying this
+System.out.println("\nPretty Please!!");
+    }
+}
