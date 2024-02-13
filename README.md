@@ -4,7 +4,7 @@ This was a sorting Array that I had to make for a school program. The program wa
 The process towards the creating of the sorting array is broken up into two parts. First, I broke up the algorithm for Part 1 based on the instructions (which confused me a bit on the ordering). 
 <h2> Language Used</h2>
  
-  - Python
+  - Java
   
  <h2> Utilities Used</h2>
 
